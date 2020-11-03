@@ -140,7 +140,7 @@ function list_bill($user_sn = "")
     $result   = $mysqli->query($sql) or die($mysqli->connect_error);
     //$bill_arr = "";
     while ($all = $result->fetch_assoc()) {
-        echo $all;
+        //echo $all;
         $bill_arr[] = $all;
         
     }
