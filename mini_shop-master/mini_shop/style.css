@@ -1,5 +1,8 @@
 body{
-  background-image:  url('images/bg.jpg');
+  background-image: url("images/background.jpg");
+  background-repeat:no-repeat;
+  height: 100%;
+  background-size: cover;
   font-family: 微軟正黑體;
 }
 
@@ -16,9 +19,44 @@ body{
 }
 
 #shop_foot{
- background-color: rgb(51, 61, 101);
+ background-color: rgb(95, 121, 224);
  color: #fff;
  padding: 30px;
  line-height: 1.8;
  margin: 15px 0px;
 }
+*{
+  padding: 0;
+  margin: 0;
+  }
+#float-box{
+  position: relative;
+  z-index: 1;
+  }
+#small-box{
+  display: none;
+  width: 200px;
+  height: 280px;
+  position: absolute;
+  filter: alpha(opacity=50);
+  opacity: 100%;
+  cursor: move;
+  }
+  
+#big-box{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 460px;
+  width: 460px;
+  height: 300px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  z-index: 1;
+  
+  
+  }
+#big-box img{
+  position: absolute;
+  z-index: 5;
+  }
