@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2020-11-03 05:44:36
+/* Smarty version 3.1.29, created on 2020-11-10 06:03:29
   from "C:\UniServerZ\www\mini_shop-master\mini_shop\templates\index.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5fa0ee444b5f39_12083168',
+  'unifunc' => 'content_5faa2d31bfff85_65927905',
   'file_dependency' => 
   array (
     '58aff4adf9b03e93c5228119d49b635b192af131' => 
     array (
       0 => 'C:\\UniServerZ\\www\\mini_shop-master\\mini_shop\\templates\\index.html',
-      1 => 1603782008,
+      1 => 1604988185,
       2 => 'file',
     ),
   ),
@@ -28,7 +28,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:index_side.html' => 1,
   ),
 ),false)) {
-function content_5fa0ee444b5f39_12083168 ($_smarty_tpl) {
+function content_5faa2d31bfff85_65927905 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant">
@@ -57,15 +57,25 @@ function content_5fa0ee444b5f39_12083168 ($_smarty_tpl) {
     <?php echo '<script'; ?>
  src="bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
+    <style>
+        body
+        {
+          background-image: url("images/background.jpg");
+          background-repeat:no-repeat;
+          height: 100%;
+          background-size: cover;
+        }
+      </style>
   </head>
   <body>
     <div class="container">
       <div id="shop_head">
         <a href="index.php">
           <img src="images/title.jpg" alt="<?php echo $_smarty_tpl->tpl_vars['shop_name']->value;?>
-" class="img-responsive">
+" class="img-responsive" >
         </a>
       </div>
+      
 
       <div id="shop_main" class="row">
         <div class="col-md-9 col-sm-8">
@@ -115,8 +125,8 @@ function content_5fa0ee444b5f39_12083168 ($_smarty_tpl) {
       </div>
 
       <div id="shop_foot" >
-        <div>地址：XX市XX區XX路XX巷XX號</div>
-        <div>電話：(06)2345678</div>
+        <div>地址：883澎湖縣七美鄉雙心石滬</div>
+        <div>電話：0912066201</div>
         <div>版權所有 copyright © 2016 tad0616.net. All Rights Reserved. </div>
       </div>
     </div>

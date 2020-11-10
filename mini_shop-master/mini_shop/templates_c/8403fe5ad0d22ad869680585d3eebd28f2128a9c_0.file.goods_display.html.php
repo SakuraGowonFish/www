@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2020-11-03 05:46:07
+/* Smarty version 3.1.29, created on 2020-11-10 06:11:22
   from "C:\UniServerZ\www\mini_shop-master\mini_shop\templates\goods_display.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5fa0ee9f756eb5_41290480',
+  'unifunc' => 'content_5faa2f0a59e7b6_85212895',
   'file_dependency' => 
   array (
     '8403fe5ad0d22ad869680585d3eebd28f2128a9c' => 
     array (
       0 => 'C:\\UniServerZ\\www\\mini_shop-master\\mini_shop\\templates\\goods_display.html',
-      1 => 1603782008,
+      1 => 1604988674,
       2 => 'file',
     ),
   ),
@@ -19,13 +19,23 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5fa0ee9f756eb5_41290480 ($_smarty_tpl) {
+function content_5faa2f0a59e7b6_85212895 ($_smarty_tpl) {
 ?>
 <div class="row">
   <div class="col-md-6">
-    <img src="<?php echo $_smarty_tpl->tpl_vars['goods']->value['pic'];?>
+  <div id="demo">
+<div id="float-box">
+<div id="small-box"></div>
+<img src="<?php echo $_smarty_tpl->tpl_vars['goods']->value['pic'];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_title'];?>
 " class="img-thumbnail">
+</div>
+<div id="big-box">
+<img src="<?php echo $_smarty_tpl->tpl_vars['goods']->value['pic'];?>
+">
+</div>
+</div>
+    
   </div>
   <div class="col-md-6">
     <h2><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_title'];?>
@@ -83,6 +93,60 @@ function content_5fa0ee9f756eb5_41290480 ($_smarty_tpl) {
     </ul>
   </div>
 </div>
+<?php echo '<script'; ?>
+ type="text/javascript">
+window.onload = function(){
+
+//獲取到需要的元素
+var demo = document.getElementById('demo');
+var smallBbox = document.getElementById('small-box');
+var floatBox = document.getElementById('float-box');
+var bigBox = document.getElementById('big-box');
+var bigBoxImg = bigBox.getElementsByTagName('img')[0];
+
+
+floatBox.onmouseover = function(){
+smallBbox.style.display = "block";
+bigBox.style.display = "block";
+}
+floatBox.onmouseout = function(){
+smallBbox.style.display = "none";
+bigBox.style.display = "none";
+}
+floatBox.onmousemove = function(e){
+var _event = e || event;
+console.log(_event.clientY);
+var l = _event.clientX - demo.offsetLeft - floatBox.offsetLeft - smallBbox.offsetWidth/2;//除2是因為讓滑鼠點出現在放大遮罩的中心位置
+var t = _event.clientY - demo.offsetTop  - floatBox.offsetTop  - smallBbox.offsetHeight/2;
+
+var demoWidth = demo.offsetWidth;
+var demoHeight = demo.offsetHeight;
+
+
+var smallBboxWidth = smallBbox.offsetWidth;
+var smallBboxHeight = smallBbox.offsetHeight;
+//滑鼠可以移動的最大XY的距離
+var maxX = demoWidth - smallBboxWidth;
+var maxY = demoHeight - smallBboxHeight;
+
+
+l = Math.min(maxX,Math.max(0,l));
+t = Math.min(maxY,Math.max(0,t));
+smallBbox.style.left = l +"px";
+smallBbox.style.top = t +"px";
+
+
+var percentX = l / (floatBox.offsetWidth - smallBboxWidth);//求出小圖遮罩的座標佔可移動區域的比例
+var percentY = t / (floatBox.offsetHeight - smallBboxHeight);
+
+
+bigBoxImg.style.left = -percentX *(bigBoxImg.offsetWidth - bigBox.offsetWidth) +"px";//大圖對的移動方向和小圖遮罩的移動方向相反
+bigBoxImg.style.top  = -percentY*(bigBoxImg.offsetHeight - bigBox.offsetHeight)+"px";
+
+}
+}
+<?php echo '</script'; ?>
+>
 
 <?php }
 }
