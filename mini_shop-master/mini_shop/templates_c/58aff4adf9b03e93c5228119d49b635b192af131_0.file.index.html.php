@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2020-11-10 06:03:29
+/* Smarty version 3.1.29, created on 2020-11-10 06:27:47
   from "C:\UniServerZ\www\mini_shop-master\mini_shop\templates\index.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5faa2d31bfff85_65927905',
+  'unifunc' => 'content_5faa32e38567f3_86814123',
   'file_dependency' => 
   array (
     '58aff4adf9b03e93c5228119d49b635b192af131' => 
     array (
       0 => 'C:\\UniServerZ\\www\\mini_shop-master\\mini_shop\\templates\\index.html',
-      1 => 1604988185,
+      1 => 1604989661,
       2 => 'file',
     ),
   ),
@@ -28,7 +28,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:index_side.html' => 1,
   ),
 ),false)) {
-function content_5faa2d31bfff85_65927905 ($_smarty_tpl) {
+function content_5faa32e38567f3_86814123 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant">
@@ -64,6 +64,10 @@ function content_5faa2d31bfff85_65927905 ($_smarty_tpl) {
           background-repeat:no-repeat;
           height: 100%;
           background-size: cover;
+        }
+        #shop_foot
+        {
+          background-color: light blue;
         }
       </style>
   </head>
